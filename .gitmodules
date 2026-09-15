@@ -1,0 +1,24 @@
+[submodule "multi-asset-optimization-lab"]
+	path = multi-asset-optimization-lab
+	url = https://github.com/john-stromberg/multi-asset-optimization-lab.git
+[submodule "portfolio-risk-exposure-decomposition"]
+	path = portfolio-risk-exposure-decomposition
+	url = https://github.com/john-stromberg/portfolio-risk-exposure-decomposition.git
+[submodule "beta-hedging-engine"]
+	path = beta-hedging-engine
+	url = https://github.com/john-stromberg/beta-hedging-engine.git
+[submodule "fx-hedging-and-overlay-lab"]
+	path = fx-hedging-and-overlay-lab
+	url = https://github.com/john-stromberg/fx-hedging-and-overlay-lab.git
+[submodule "risk-attribution-engine"]
+	path = risk-attribution-engine
+	url = https://github.com/john-stromberg/risk-attribution-engine.git
+[submodule "performance-attribution-lab"]
+	path = performance-attribution-lab
+	url = https://github.com/john-stromberg/performance-attribution-lab.git
+[submodule "exposure-aware-rebalancing-optimizer"]
+	path = exposure-aware-rebalancing-optimizer
+	url = https://github.com/john-stromberg/exposure-aware-rebalancing-optimizer.git
+[submodule "portfolio-construction-case-study-suite"]
+	path = portfolio-construction-case-study-suite
+	url = https://github.com/john-stromberg/portfolio-construction-case-study-suite.git
