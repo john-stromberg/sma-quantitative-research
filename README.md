@@ -4,6 +4,20 @@
 
 This repository serves as an organizational hub and landing page. Each child project is maintained as an independent repository.
 
+## 📚 Documentation & Guides
+
+**Quick Links**:
+- 🏗️ **[Architecture Guide](docs/ARCHITECTURE.md)** - System design, patterns, interfaces
+- 📋 **[Best Practices](docs/BEST_PRACTICES.md)** - Research discipline, testing, code quality
+- 📋 **[Repository Template](TEMPLATE.md)** - Structure & setup for new projects
+- ✅ **[Implementation Complete](IMPLEMENTATION_COMPLETE.md)** - Deliverables summary & status
+
+**For New Researchers**: Start with [TEMPLATE.md](TEMPLATE.md) for project structure and [BEST_PRACTICES.md](docs/BEST_PRACTICES.md) for workflow.
+
+**For Portfolio Managers**: See example [Decision Memo](multi-asset-optimization-lab/reports/) and [Initial Outputs Summary](multi-asset-optimization-lab/reports/INITIAL_OUTPUTS_SUMMARY.md).
+
+**For DevOps**: Check [CI/CD Pipeline](multi-asset-optimization-lab/.github/workflows/tests.yml) and [Deployment Guide](multi-asset-optimization-lab/docs/DEPLOYMENT.md).
+
 ## Shared Infrastructure
 
 ### sma-quant-core
