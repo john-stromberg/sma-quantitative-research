@@ -4,6 +4,39 @@
 
 This repository serves as an organizational hub and landing page. Each child project is maintained as an independent repository.
 
+## Shared Infrastructure
+
+### sma-quant-core
+
+**Foundational library** for all quantitative research projects.
+
+Provides:
+- **Data Models**: Asset, Portfolio, Constraints, TimeSeries, FactorModel, OptimizedPortfolio, BacktestResult
+- **Interfaces**: IOptimizer, IConstraint, ISolver, IBacktester, IMetrics (language-neutral contracts)
+- **Metrics**: Sharpe Ratio, Sortino Ratio, Information Ratio, Max Drawdown, portfolio analytics
+- **Backtesting**: Event-driven simulator with performance attribution, slippage, and commissions
+- **Reporting**: Decision memo templates, efficient frontier reports, backtest summaries
+- **Sample Data**: 5-asset portfolio (equities, bonds, alternatives) with constraints and correlations
+
+**Installation**:
+```bash
+pip install -e "path/to/sma-quant-core[dev]"
+```
+
+**Quick Start**:
+```python
+from sma_quant_core.models import Asset
+from sma_quant_core.metrics import Metrics
+
+assets = [Asset("VTSAX", "US Stock", "equity", 0.08, 0.15)]
+weights = [1.0]
+metrics = Metrics.portfolio_metrics(weights, assets)
+```
+
+Repository: `sma-quant-core/` (local)
+
+---
+
 ## Projects
 
 ### Portfolio Optimization & Construction
@@ -40,18 +73,66 @@ This repository serves as an organizational hub and landing page. Each child pro
 
 ## Research Principles
 
-- **Methodological clarity:** define assumptions, model choices, and robustness checks.
-- **Explainable outputs:** connect quant results to portfolio-management implications.
-- **Reproducibility:** code, data assumptions, and evaluation steps should be repeatable.
-- **Applied focus:** research artifacts should inform actionable portfolio decisions.
+- **Methodology-first**: Define the research problem and approach before implementation.
+- **Research → Production separation**: Use git branches (develop=research, main=production) with validation gates.
+- **Reproducibility**: Version-controlled data, pinned dependencies, containerization, comprehensive documentation.
+- **Methodological clarity**: Define assumptions, model choices, and robustness checks.
+- **Explainable outputs**: Connect quant results to portfolio-management implications.
+- **Applied focus**: Research artifacts inform actionable portfolio decisions.
+
+## Repository Structure
+
+Each research repository follows this pattern:
+
+```
+project/
+├── .github/workflows/      # CI/CD pipelines
+├── src/                    # Production-ready code
+├── research/               # Exploratory notebooks & scripts
+├── tests/                  # Unit & integration tests
+├── data/                   # Sample & versioned data
+├── reports/                # Generated decision memos
+├── setup.py                # Python packaging
+├── requirements.txt        # Pinned dependencies
+└── README.md
+```
+
+## Development Workflow
+
+1. **Create feature branch** from develop
+2. **Implement & test** with pytest
+3. **Validate** against sma-quant-core interfaces
+4. **Merge to develop** (research staging)
+5. **PR to main** with methodology memo + test results
+6. **Merge after review** (production)
 
 ## Getting Started
 
-Each project is independent and can be cloned directly:
+To use the research infrastructure:
 
 ```bash
-git clone https://github.com/john-stromberg/<project-name>.git
-cd <project-name>
-# See project README for local setup and execution instructions
+# Install shared core (from sma-quant-core directory)
+pip install -e ".[dev]"
+
+# Run tests
+pytest tests/ -v
+
+# Install a research project
+pip install -e "path/to/research-project[dev]"
+
+# Explore research notebooks
+jupyter notebook research/
 ```
+
+## Best Practices
+
+1. **Define the question**: What portfolio decision are you optimizing?
+2. **Document assumptions**: Asset models, constraints, correlations, risk-free rate
+3. **Backtest rigorously**: Use realistic slippage, commissions, market conditions
+4. **Test edge cases**: Extreme scenarios, constraint conflicts, data gaps
+5. **Report robustness**: Sensitivity analysis, parameter sweeps, confidence intervals
+6. **Decision memos**: Distill research into actionable portfolio recommendations
+7. **Code review**: Peer review before promoting to production
+
+
 
