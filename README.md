@@ -1,3 +1,8 @@
+> **Moved:** The projects indexed here are maintained in [portfolio-analytics](https://github.com/john-stromberg/portfolio-analytics).
+> This repository is retained as a historical snapshot.
+
+---
+
 # SMA Quantitative Research
 
 **Portfolio index** for quantitative SMA research projects across **equities, bonds, alternatives, ETFs, and mutual funds**.
